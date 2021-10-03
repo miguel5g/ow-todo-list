@@ -1,0 +1,31 @@
+.todoItem {
+  @apply flex gap-2 p-2 rounded-lg border-2 border-l-8 border-gray-300 w-full max-w-md mx-auto;
+}
+
+.todoItemCompleted {
+  @apply border-green-400;
+}
+
+.todoItemTitle {
+  @apply truncate text-gray-900 text-lg font-medium;
+}
+
+.todoItemCompleted .todoItemTitle {
+  @apply line-through;
+}
+
+.todoItemDescription {
+  @apply truncate text-gray-600 text-sm font-light;
+}
+
+.todoItemCompleted .todoItemDescription {
+  @apply line-through;
+}
+
+.todoItemRemoveButton {
+  @apply flex items-center justify-center p-2 bg-red-400 rounded-md border-b-4 border-red-700 transition active:border-b-2 active:mt-2p text-white text-base;
+}
+
+.todoItemCheckButton {
+  @apply flex items-center justify-center p-2 bg-green-400 rounded-md border-b-4 border-green-700 transition active:border-b-2 active:mt-2p text-white text-base;
+}
