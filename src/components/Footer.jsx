@@ -12,8 +12,8 @@ function BaseLink({ children, href }) {
 export function Footer() {
   return (
     <footer className="flex justify-center border-t border-gray-300">
-      <div className="flex flex-col flex-1 md:max-w-screen-lg md:flex-row items-center justify-center md:justify-between p-4">
-        <h2 className="text-gray-800 text-lg mb-4">
+      <div className="flex flex-col flex-1 md:max-w-screen-lg md:flex-row items-center justify-center md:justify-between p-4 py-2 md:py-4">
+        <h2 className="text-gray-800 text-md md:text-lg md: mb-2">
           Projeto desenvolvido por{" "}
           <BaseLink href="https://github.com/miguel5g/">Miguel Ângelo</BaseLink>
         </h2>
