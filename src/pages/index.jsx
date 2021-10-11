@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Header } from "../components/Header";
 import { Container, Main } from "../components/Home";
@@ -8,6 +8,20 @@ import { Footer } from "../components/Footer";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const localTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    
+    setTasks(localTasks.map((task) => ({...task, created_at: new Date(task.created_at)})));
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   function handlerCreateTask(data) {
     setTasks([...tasks, data]);
